@@ -1,0 +1,7 @@
+data/location_coords.csv
+data/playonce.parquet
+data/locations.csv
+data/wowah_data.csv
+data/wowah_data.parquet
+data/zones.csv
+src/__pycache__/
