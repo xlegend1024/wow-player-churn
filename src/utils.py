@@ -21,4 +21,4 @@ def prep_parquet(csv_file_path:str, playtime:int) -> tuple:
     df = df.astype({"timestamp":"datetime64"})
     df.to_parquet("./data/wowah_data.parquet")
 
-    return df.shap
+    return df.shape
