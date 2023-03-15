@@ -1,0 +1,16 @@
+pandas
+numpy
+# ipkernel
+jupyter
+matplotlib
+plotly
+seaborn
+scikit-learn
+plotly
+statsmodels
+kaleido
+nltk
+scikit-surprise
+pyarrow
+fastparquet
+keras
