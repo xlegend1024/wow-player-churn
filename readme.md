@@ -17,6 +17,8 @@ The techniques you expect to use in your analysis
 
 ## 3. Exploratory Data Analysis
 
+Details [EDA Notebook](./WW-EDA.ipynb)
+
 Data has 27,681 game players information
 
 ### Game player's character level
@@ -100,6 +102,8 @@ When the gamer reaches level 60+, number of zone for game play reduced
 ![](./images/line_level_up_journey.png)
 
 ## 4. Training
+
+Details [Experiment Notebook](./WW-Experiments.ipynb)
 
 ### Classification Baseline models
 
