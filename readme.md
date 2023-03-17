@@ -4,6 +4,8 @@
 
 `Classify game player who is likely to be churned in six month`
 
+    The experiment aims to prevent game players from quitting within a month by offering them a discounted 6-month subscription.
+
 Predicting game player churn is an important problem in the gaming industry as it helps game developers and publishers understand the behavior of their players and take necessary steps to retain them. By analyzing the pattern of players before they churn, game developers can take proactive measures to retain their players and prevent them from quitting the game.
 
 ## 2. Data source
@@ -25,11 +27,7 @@ Data has 27,681 game players information
 
 ![](./images/bar_number_of_players_by_level.png)
 
-- By Race
-
-![](./images/line_number_of_players_by_level_race.png)
-
-- Level 70 was maximum cap before November 2008
+- Level 70 was maximum cap before November 2008 which explain why there are many activity of level 70
 
 ![](./images/hist_level.png)
 
@@ -41,6 +39,7 @@ Data has 27,681 game players information
 
 ### Level by Race
 
+- In November, the maxium level was increase to 80, many palyers back to play to reach the level to 80
 - Except Blood Elf, most of races show similar trend
 
 ![](./images/line_number_of_players_by_level_race.png)
@@ -51,11 +50,17 @@ Data has 27,681 game players information
 
 ### Guild
 
+- `-1` indicate no guild, never join any guild
+- Guild `103` is the most popular and `282` is second
+
 ![](./images/bar_number_of_player_join.png)
 
-## Business Findings
+## 4. Business Findings
 
 Number of guild activity and game play
+
+- Low level gamers move guild often than high level gamers
+- High level gamers change guild less than 5 times a year
 
 ![](./images/scatter_numofJoinedGuild_palycount.png)
 
@@ -72,6 +77,8 @@ World of Warcraft (WoW) offers 3 diffenent subscriptions
 ### Period of playing game in months
 
 - 55.2 % of player drop after a month of game play
+- When the gamer pass 8 months, they might play to 4 or more
+- 13-months mean that the gamer played the game since January to December, the first month counts a 1
 
 ![](./images/pie_bar_play_duration_in_month.png)
 
@@ -81,11 +88,14 @@ World of Warcraft (WoW) offers 3 diffenent subscriptions
 
 ### New players
 
+- Every month there are more than 1,000 of new players (or new characters)
+- In October there was new update and it caused new character Orc and Troll races
+
 ![](./images/bar_new_players_by_race.png)
 
 ### Level activity
 
-When the gamer reaches level 60+, number of zone for game play reduced
+- When the gamer reaches level 60+, number of zone for game play reduced
 
 ![](./images/scatter_numofJzone_ount.png)
 
@@ -101,7 +111,7 @@ When the gamer reaches level 60+, number of zone for game play reduced
 
 ![](./images/line_level_up_journey.png)
 
-## 4. Training
+## 5. Training
 
 Details [Experiment Notebook](./WW-Experiments.ipynb)
 
@@ -119,12 +129,18 @@ Details [Experiment Notebook](./WW-Experiments.ipynb)
 
 RandomFroest shows the best result among the estimators
 
-![](./images/Logistic%20Regression_roc_curve.png.png)
+![](./images/Logistic%20Regression_roc_curve.png)
+
 ![](./images/Decision%20Tree_roc_curve.png)
+
 ![](./images/KNeighbors_roc_curve.png)
+
 ![](./images/KNeighbors_roc_curve.png)
+
 ![](./images/SVC_roc_curve.png)
+
 ![](./images/RandomForest_roc_curve.png)
+
 
 ### Hyperparameter Tuning
 
@@ -135,8 +151,8 @@ Logistic Regression
 
 RandomFroest
 
-    Best hyperparameters: {'estimator__max_depth': None, 'estimator__max_features': 'auto', 'estimator__min_samples_leaf': 3, 'estimator__min_samples_split': 4, 'estimator__n_estimators': 100}
-Test set accuracy: 0.72
+    Best hyperparameters: {'estimator__max_depth': 7, 'estimator__max_features': 'sqrt', 'estimator__min_samples_leaf': 3, 'estimator__min_samples_split': 2, 'estimator__n_estimators': 50}
+    Test set accuracy: 0.7397525135344161
 
 ## Next step
 
@@ -144,4 +160,4 @@ Test set accuracy: 0.72
 
 Use regression estimator to predict game play preiod
 
-Use ML Interprt to understand festure importance
+[Use ML Interprt to understand festure importance](./WW-InterpretModels.ipynb)
